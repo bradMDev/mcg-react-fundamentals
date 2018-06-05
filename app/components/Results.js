@@ -22,8 +22,8 @@ class Results extends React.Component {
     api.battle([
       players.playerOneName,
       players.playerTwoName
-    ]).then(function(results) {
-      if (results === null) {
+    ]).then(function(players) {
+      if (players === null) {
         return this.setState(function () {
           return {
             error: 'Looks like there was an error. Check that both user exist on GitHub.',
@@ -35,8 +35,8 @@ class Results extends React.Component {
       this.setState(function() {
         return {
           error: null,
-          winner: results[0],
-          loser: results[1],
+          winner: players[0],
+          loser: players[1],
           loading: false
         };
       });
