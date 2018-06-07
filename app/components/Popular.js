@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 var api = require('../utils/api');
+var Loading = require('./Loading');
 
 // If all your component has is a render method, you can use a different syntax,
 // ...it's called a 'stateless functional component'
@@ -110,7 +111,7 @@ class Popular extends React.Component {
 	    		onSelect={this.updateLanguage}
 	    	/>
 				{!this.state.repos
-					? <p>LOADING</p>
+					? <Loading />
 					: <RepoGrid repos={this.state.repos} />}
 	    </div>
 	  )
